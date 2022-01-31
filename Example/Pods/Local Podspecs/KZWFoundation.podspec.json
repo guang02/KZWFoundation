@@ -1,0 +1,22 @@
+{
+  "name": "KZWFoundation",
+  "version": "0.1.0",
+  "summary": "A short description of KZWFoundation.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Guang/KZWFoundation",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Guang": "guang_02@163.com"
+  },
+  "source": {
+    "git": "https://github.com/Guang/KZWFoundation.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "KZWFoundation/Classes/**/*"
+}

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KZWFoundation'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of KZWFoundation.'
 
 # This description is used to generate tags and improve search results.
@@ -21,16 +21,25 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Guang/KZWFoundation'
+  s.homepage         = 'https://github.com/Guang02/KZWFoundation'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Guang' => 'guang_02@163.com' }
-  s.source           = { :git => 'https://github.com/Guang/KZWFoundation.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Guang02/KZWFoundation.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'KZWFoundation/Classes/**/*'
+  s.source_files  = "KZWFoundation/Classes/KZWFoundationHear.h"
+  
+  s.subspec 'Content' do |ss|
+      ss.source_files = 'KZWFoundation/Classes/**/*'
+      ss.resource_bundle = { 'KZWFundation' => 'KZWFoundation/Assets/*' }
+      ss.exclude_files = "KZWFoundation/Classes/KZWFoundationHear.h"
+      ss.frameworks = "MapKit" , "WebKit" , "AudioToolbox"
+  end
   
   # s.resource_bundles = {
   #   'KZWFoundation' => ['KZWFoundation/Assets/*.png']
@@ -39,4 +48,13 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+
+  s.dependency "Masonry", "1.1.0"
+  s.dependency "MJRefresh", "3.7.5"
+  s.dependency "AFNetworking", "4.0.1"
+  s.dependency "Mantle", "2.2.0"
+  s.dependency "MBProgressHUD", "1.2.0"
+  s.dependency "SAMKeychain", "1.5.3"
+  s.dependency "dsBridge"
 end
